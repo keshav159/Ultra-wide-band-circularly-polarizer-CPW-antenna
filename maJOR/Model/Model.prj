@@ -1,0 +1,17 @@
+[Author]
+kesha
+[Mesh Cells]
+209,171
+[Mesh Type]
+Hexahedral
+[Last Problem Type]
+High Frequency
+[Last Solver Type]
+HF Time Domain
+[Last Solver Type Abb]
+t
+[Results]
+Time Domain: S-Parameter
+[Modeler Unique ID]
+5:major.cst?49be373c3d3deb59635df704c27378f4?51332:numberofparameters=20:port=2>mode=1>zre=50>zim=0:::x1?ly?gr?g1l?gp?g1w?l2?w2?c?l?l1?ll?lw?lx?w?w1?wx?d?h?t
+[Comment]

@@ -1,0 +1,33 @@
+@CACHEFILEVERSION 2
+@DOUBLE
+-G1l
+-5
+h
+0.8
+-t
+-0.2
+-(Gr-x1)
+-8.5
+4#*h + t
+3.4
+-(Wx-G1l-x1)
+-7.2
+-Ly
+-23
+2#*Wx
+30
+-(2#*Wx-G1l-x1)
+-22.2
+-x1
+-2.8
+Gr
+11.3
+Lw/2# + gp
+1.5
+Ly-x1
+20.2
+3#*Lw
+4.5
+Wx-G1l-w1
+0
+@LONG
