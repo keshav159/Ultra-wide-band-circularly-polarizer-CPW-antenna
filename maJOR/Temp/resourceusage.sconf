@@ -1,12 +1,12 @@
 FeatureKeywords:string:monitor:farfield:single freq, EXTENSION:mcalc:fpba:faceter-21, EXTENSION:mcalc:fpba:facets:save, EXTENSION:mcalc:fpba:shapes:build, EXTENSION:mcalc:fpba:shapes:build:facets, EXTENSION:mcalc:fpba:shapes:build:separate-lumps, EXTENSION:mcalc:mode:facets, EXTENSION:mcalc:port_analyzer:version_2, EXTENSION:mcalc:mode:port-extract, EXTENSION:mcalc:FARM, EXTENSION:mcalc:filaments:wirefill, EXTENSION:mcalc:fpba:meshfill, EXTENSION:mcalc:fpba:meshfill:ports, EXTENSION:mcalc:fpba:rasterizer-2013, EXTENSION:mcalc:fpba:tst, EXTENSION:mcalc:fpba:tst:ports, EXTENSION:mcalc:fpba:tst:potentials, EXTENSION:mcalc:matrices:coefficients:fpba:classic, EXTENSION:mcalc:matrices:coefficients:fpba:m2h, EXTENSION:mcalc:matrices:filaments:lumped, EXTENSION:mcalc:matrices:filaments:wires, EXTENSION:mcalc:matrices:modify, EXTENSION:mcalc:matrices:modify:consistency, EXTENSION:mcalc:matrices:modify:early-fill-limit, EXTENSION:mcalc:matrices:modify:early-port-homogenization, EXTENSION:mcalc:matrices:modify:feature:wipe, EXTENSION:mcalc:matrices:point-in-pec:fpba, EXTENSION:mcalc:mode:fpba-BG, la:iterative, EXTENSION:mcalc:fpba:facets:load, EXTENSION:mcalc:fpba:si, EXTENSION:mcalc:fpba:si:edge-face-scan, EXTENSION:mcalc:matrices:filaments:discrete-ports, EXTENSION:mcalc:mode:fpba-node, monitor:3D:freq, EXTENSION:fitd solver:signal sampling, acceleration:cpu:4, acceleration:cpu:symmetric, background:normal, boundary:expanded open:xmax, boundary:expanded open:xmin, boundary:expanded open:ymax, boundary:expanded open:ymin, boundary:expanded open:zmax, boundary:expanded open:zmin, boundary:open:ConvPML, boundary:open:lossfree, material:SI:generalized model, material:SI:lossy metal, material:SI:tst_si, material:disp:eps, material:rho, mesh:hex, mesh:hex:corner correction, mesh:hex:fpba, meshline:hex:new, monitor:farfield::single freq, solver:hf:td, source:waveguide port:active, source:waveguide port:inhomogeneous, source:waveguide port:internal port, source:waveguide port:open port, units:Capacitance:pF, units:Conductance:S, units:Current:A, units:Frequency:GHz, units:Inductance:nH, units:Length:mm, units:Resistance:Ohm, units:Temperature:Kelvin, units:Time:ns, units:Voltage:V, solver:pp:sparameter:basicbranch, solver:pp:sparameter:renorm, solver:pp:sparameter:ffbalance, solver:pp:sparameter:calcyz, solver:pp:sparameter:calcvswr, solver:pp:sparameter:updatebalance, solver:pp:sparameter:arbranch, mesh:param:assertfailed, solver:pp:farfield:2d, solver:pp:farfield:1d, visualization:field_plot:default_engine, material:SI:std, front:parametersweep, EXTENSION:mcalc:fpba:tst:curls, mesh:hex:tst, mesh:hex:tst adapter edges, mesh:hex:tst adapter faces, mesh:hex:tst split edges, mesh:hex:tst split faces, monitor:farfield:broadband, monitor:farfield::broadband, visualization:mesh_view:legacy_engine
 matrixcalc-acis-facets/MaxResidentSizeMiB:int:52
-matrixcalc-acis-facets/Runtime:double:0.471
+matrixcalc-acis-facets/Runtime:double:0.501
 matrixcalc-matrix-coefficients/MaxResidentSizeMiB:int:268
 matrixcalc-matrix-coefficients/Runtime:double:5.777
-matrixcalc-mcalc-prepare/MaxResidentSizeMiB:int:36
+matrixcalc-mcalc-prepare/MaxResidentSizeMiB:int:37
 matrixcalc-mcalc-prepare/Runtime:double:0.351
 matrixcalc-mode-facets-ifx/MaxResidentSizeMiB:int:5
-matrixcalc-mode-facets-ifx/Runtime:double:0.64
+matrixcalc-mode-facets-ifx/Runtime:double:0.711
 matrixcalc-mode-facets-rendering/MaxResidentSizeMiB:int:5
 matrixcalc-mode-facets-rendering/Runtime:double:0.208
 matrixcalc-mode-fpba-bg/MaxResidentSizeMiB:int:5
@@ -15,7 +15,7 @@ matrixcalc-mode-fpba-node/MaxResidentSizeMiB:int:17
 matrixcalc-mode-fpba-node/Runtime:double:26.187
 matrixcalc-mode-port-extract/MaxResidentSizeMiB:int:5
 matrixcalc-mode-port-extract/Runtime:double:0.096
-matrixcalc-port-integration-paths/MaxResidentSizeMiB:int:118
+matrixcalc-port-integration-paths/MaxResidentSizeMiB:int:119
 matrixcalc-port-integration-paths/Runtime:double:1.275
 matrixcalc-rendering/MaxResidentSizeMiB:int:264
 matrixcalc-rendering/Runtime:double:10.564
@@ -23,7 +23,7 @@ matrixcalc-shrink-mcalc-data/MaxResidentSizeMiB:int:99
 matrixcalc-shrink-mcalc-data/Runtime:double:0.573
 matrixcalc-surface-impedance-fpba/MaxResidentSizeMiB:int:116
 matrixcalc-surface-impedance-fpba/Runtime:double:1.172
-matrixcalc-triangles-ff2qq/MaxResidentSizeMiB:int:53
+matrixcalc-triangles-ff2qq/MaxResidentSizeMiB:int:54
 matrixcalc-triangles-ff2qq/Runtime:double:0.289
 matrixcalc-triangles-qq2ff/MaxResidentSizeMiB:int:23
 matrixcalc-triangles-qq2ff/Runtime:double:0.064
@@ -34,7 +34,7 @@ matrixcalc-tst-detection/Runtime:double:4.275
 matrixcalc-xcfd-probes/MaxResidentSizeMiB:int:116
 matrixcalc-xcfd-probes/Runtime:double:0.124
 matrixcalc/MaxResidentSizeMiB:int:57
-paracontrol/MaxResidentSizeMiB:int:9
+paracontrol/MaxResidentSizeMiB:int:11
 solver_hf_td/MaxResidentSizeMiB:int:976
 solver_pp/MaxResidentSizeMiB:int:15
 ---

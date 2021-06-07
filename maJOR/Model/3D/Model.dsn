@@ -8,8 +8,8 @@ StaticSources:
 FloquetPortNames:
 FloquetPortModes:
 Number of frequency-points: 1
-Fmin: 3.000000e+009
-Fmax: 1.800000e+010
+Fmin: 1.000000e+009
+Fmax: 1.100000e+010
 Fscale: 1.000000e+009
 
 
@@ -35,8 +35,8 @@ nmonfrequencies: 0
 monfrequencies: 
 montype: 18
 mondomain: 1
-mon_fmin: "3"
-mon_fmax: "18"
+mon_fmin: "1"
+mon_fmax: "11"
 mon_nfSteps: "210"
 *** endmonitor
 

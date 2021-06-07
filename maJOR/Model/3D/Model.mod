@@ -3,7 +3,7 @@
 '# length = mm
 '# frequency = GHz
 '# time = ns
-'# frequency range: fmin = 3 fmax = 18
+'# frequency range: fmin = 1 fmax = 11
 '# created = '[VERSION]2014.0|23.0.0|20140224[/VERSION]
 
 
@@ -402,7 +402,6 @@ With Brick
      .Zrange "0", "h" 
      .Create
 End With
-
 
 ''@ boolean add shapes: component1:patch, component1:micro strip
 '
@@ -1964,7 +1963,6 @@ With ExtrudeCurve
      .Create
 End With
 
-
 '@ align wcs with edge and face
 
 '[VERSION]2014.0|23.0.0|20140224[/VERSION]
@@ -2044,15 +2042,13 @@ End With
 '@ delete shape: component1:Traingle 1
 
 '[VERSION]2014.0|23.0.0|20140224[/VERSION]
-Solid.Delete "component1:Traingle 1" 
-
+Solid.Delete "component1:Traingle 1"
 
 '@ align wcs with point
 
 '[VERSION]2014.0|23.0.0|20140224[/VERSION]
 Pick.PickEndpointFromId "component1:Patch", "11" 
-WCS.AlignWCSWithSelectedPoint 
-
+WCS.AlignWCSWithSelectedPoint
 
 '@ define curve polygon: curve1:polygon1
 
@@ -2066,8 +2062,7 @@ With Polygon
      .LineTo "0", "0" 
      .LineTo "-W1", "0" 
      .Create 
-End With 
-
+End With
 
 '@ define extrudeprofile: component1:solid1
 
@@ -2084,7 +2079,6 @@ With ExtrudeCurve
      .Create
 End With
 
-
 '@ boolean subtract shapes: component1:Patch, component1:solid1
 
 '[VERSION]2014.0|23.0.0|20140224[/VERSION]
@@ -2092,15 +2086,13 @@ With Solid
      .Version 9
      .Subtract "component1:Patch", "component1:solid1" 
      .Version 1
-End With 
-
+End With
 
 '@ align wcs with point
 
 '[VERSION]2014.0|23.0.0|20140224[/VERSION]
 Pick.PickEndpointFromId "component1:Patch", "13" 
-WCS.AlignWCSWithSelectedPoint 
-
+WCS.AlignWCSWithSelectedPoint
 
 '@ define curve polygon: curve1:polygon1
 
@@ -2114,8 +2106,7 @@ With Polygon
      .LineTo "0", "0" 
      .LineTo "W2", "0" 
      .Create 
-End With 
-
+End With
 
 '@ define extrudeprofile: component1:solid1
 
@@ -2132,7 +2123,6 @@ With ExtrudeCurve
      .Create
 End With
 
-
 '@ boolean subtract shapes: component1:Patch, component1:solid1
 
 '[VERSION]2014.0|23.0.0|20140224[/VERSION]
@@ -2140,8 +2130,7 @@ With Solid
      .Version 9
      .Subtract "component1:Patch", "component1:solid1" 
      .Version 1
-End With 
-
+End With
 
 '@ align wcs with edge and face
 
@@ -2150,12 +2139,10 @@ Pick.PickFaceFromId "component1:Patch", "24"
 Pick.PickEdgeFromId "component1:Patch", "50", "33" 
 WCS.AlignWCSWithSelected "EdgeAndFace"
 
-
 '@ rotate wcs
 
 '[VERSION]2014.0|23.0.0|20140224[/VERSION]
-WCS.RotateWCS "v", "180.00" 
-
+WCS.RotateWCS "v", "180.00"
 
 '@ define brick: component1:Ground 1
 
@@ -2171,12 +2158,10 @@ With Brick
      .Create
 End With
 
-
 '@ rotate wcs
 
 '[VERSION]2014.0|23.0.0|20140224[/VERSION]
-WCS.RotateWCS "w", "180.00" 
-
+WCS.RotateWCS "w", "180.00"
 
 '@ align wcs with edge and face
 
@@ -2184,7 +2169,6 @@ WCS.RotateWCS "w", "180.00"
 Pick.PickFaceFromId "component1:Patch", "24" 
 Pick.PickEdgeFromId "component1:Patch", "50", "33" 
 WCS.AlignWCSWithSelected "EdgeAndFace"
-
 
 '@ define curve polygon: curve1:Ground 2
 
@@ -2203,8 +2187,7 @@ With Polygon
      .RLine "-(Gr-x1)", "0" 
      .RLine "0", "-G1l" 
      .Create 
-End With 
-
+End With
 
 '@ define extrudeprofile: component1:Ground 2
 
@@ -2221,12 +2204,10 @@ With ExtrudeCurve
      .Create
 End With
 
-
 '@ pick face
 
 '[VERSION]2014.0|23.0.0|20140224[/VERSION]
-Pick.PickFaceFromId "component1:Patch", "21" 
-
+Pick.PickFaceFromId "component1:Patch", "21"
 
 '@ define port: 2
 
@@ -2252,20 +2233,17 @@ With Port
      .ZrangeAdd "h", "4*h + t" 
      .SingleEnded "False" 
      .Create 
-End With 
-
+End With
 
 '@ delete port: port1
 
 '[VERSION]2014.0|23.0.0|20140224[/VERSION]
-Port.Delete "1" 
-
+Port.Delete "1"
 
 '@ define frequency range
 
 '[VERSION]2014.0|23.0.0|20140224[/VERSION]
-Solver.FrequencyRange "3", "18" 
-
+Solver.FrequencyRange "3", "18"
 
 '@ define farfield monitor: farfield (f=10.5)
 
@@ -2280,8 +2258,7 @@ With Monitor
      .ExportFarfieldSource "False" 
      .SetSubvolume  "-24.637915666667",  "24.637915666667",  "-22.137915666667",  "22.137915666667",  "-6.3379156666667",  "12.337915666667" 
      .Create 
-End With 
-
+End With
 
 '@ define monitor: e-field (f=10.5)
 
@@ -2296,8 +2273,7 @@ With Monitor
      .UseSubvolume "False" 
      .SetSubvolume  "-24.637915666667",  "24.637915666667",  "-22.137915666667",  "22.137915666667",  "-6.3379156666667",  "12.337915666667" 
      .Create 
-End With 
-
+End With
 
 '@ set pba mesh type
 
@@ -2367,5 +2343,165 @@ With FarfieldPlot
      .ShowPhaseCenter "True" 
      .StoreSettings
 End With 
+
+'@ set pba mesh type
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+Mesh.MeshType "PBA"
+
+'@ farfield plot options
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With FarfieldPlot 
+     .Plottype "Cartesian" 
+     .Vary "angle1" 
+     .Theta "0" 
+     .Phi "0" 
+     .Step "5" 
+     .Step2 "5" 
+     .SetLockSteps "True" 
+     .SetPlotRangeOnly "False" 
+     .SetThetaStart "0" 
+     .SetThetaEnd "180" 
+     .SetPhiStart "0" 
+     .SetPhiEnd "360" 
+     .SetTheta360 "True" 
+     .SymmetricRange "True" 
+     .SetTimeDomainFF "False" 
+     .SetFrequency "18" 
+     .SetTime "0" 
+     .SetColorByValue "True" 
+     .DrawStepLines "False" 
+     .DrawIsoLongitudeLatitudeLines "False" 
+     .ShowStructure "False" 
+     .SetStructureTransparent "False" 
+     .SetFarfieldTransparent "False" 
+     .SetSpecials "enablepolarextralines" 
+     .SetPlotMode "Gain" 
+     .Distance "1" 
+     .UseFarfieldApproximation "True" 
+     .SetScaleLinear "False" 
+     .SetLogRange "40" 
+     .SetLogNorm "0" 
+     .DBUnit "0" 
+     .EnableFixPlotMaximum "False" 
+     .SetFixPlotMaximumValue "1" 
+     .SetInverseAxialRatio "False" 
+     .SetAxesType "user" 
+     .SetAnntenaType "unknown" 
+     .Phistart "1.000000e+000", "0.000000e+000", "0.000000e+000" 
+     .Thetastart "0.000000e+000", "0.000000e+000", "1.000000e+000" 
+     .PolarizationVector "0.000000e+000", "1.000000e+000", "0.000000e+000" 
+     .SetCoordinateSystemType "spherical" 
+     .SetAutomaticCoordinateSystem "True" 
+     .SetPolarizationType "Linear" 
+     .SlantAngle 0.000000e+000 
+     .Origin "bbox" 
+     .Userorigin "0.000000e+000", "0.000000e+000", "0.000000e+000" 
+     .SetUserDecouplingPlane "False" 
+     .UseDecouplingPlane "False" 
+     .DecouplingPlaneAxis "X" 
+     .DecouplingPlanePosition "0.000000e+000" 
+     .LossyGround "False" 
+     .GroundEpsilon "1" 
+     .GroundKappa "0" 
+     .EnablePhaseCenterCalculation "False" 
+     .SetPhaseCenterAngularLimit "3.000000e+001" 
+     .SetPhaseCenterComponent "boresight" 
+     .SetPhaseCenterPlane "both" 
+     .ShowPhaseCenter "True" 
+     .StoreSettings
+End With 
+
+
+'@ define frequency range
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+Solver.FrequencyRange "1", "11" 
+
+
+'@ add parsweep parameter: Sequence 1:Lx
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddParameter_Samples "Sequence 1", "Lx", "12.5", "17", "5", "False" 
+End With
+
+
+'@ set pba mesh type
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+Mesh.MeshType "PBA"
+
+'@ delete parsweep sequence: Sequence 1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .DeleteSequence "Sequence 1" 
+End With
+
+
+'@ add parsweep sequence: Sequence 1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddSequence "Sequence 1" 
+End With
+
+
+'@ add parsweep parameter: Sequence 1:L1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddParameter_Samples "Sequence 1", "L1", "10", "12.9", "4", "False" 
+End With
+
+
+'@ add parsweep parameter: Sequence 1:W1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddParameter_Samples "Sequence 1", "W1", "10", "13.3", "4", "False" 
+End With
+
+
+'@ delete parsweep sequence: Sequence 1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .DeleteSequence "Sequence 1" 
+End With
+
+
+'@ add parsweep sequence: Sequence 1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddSequence "Sequence 1" 
+End With
+
+
+'@ add parsweep parameter: Sequence 1:C
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddParameter_Samples "Sequence 1", "C", "1.5", "4", "5", "False" 
+End With
+
+
+'@ add parsweep parameter: Sequence 1:d
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddParameter_Samples "Sequence 1", "d", "1", "4", "5", "False" 
+End With
+
+
+'@ delete parsweep sequence: Sequence 1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .DeleteSequence "Sequence 1" 
+End With
 
 

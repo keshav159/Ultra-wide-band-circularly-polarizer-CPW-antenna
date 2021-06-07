@@ -3,7 +3,7 @@
 [PCB_BODIES: False]
 [PCB_IMPORT: False]
 [DISABLE_FAST_LOAD: False]
-[WCS: -1.1102230246252e-016 15 1.8 0 0 1 -1 -0 -0]
+[WCS: 0 15 1.7 0 0 1 -1 -0 -0]
 [UNITS]
      .Geometry "mm" 
      .Frequency "GHz" 
@@ -17,7 +17,7 @@
      .Inductance "NanoH" 
 [ENDUNITS]
 [FREQUENCYRANGE]
-Solver.FrequencyRange "3", "18" 
+Solver.FrequencyRange "1", "11" 
 [ENDFREQUENCYRANGE]
 [BACKGROUND]
      .XminSpace "0.0" 
@@ -451,7 +451,7 @@ Solver.FrequencyRange "3", "18"
      .Orientation "zmax" 
      .PortOnBound "False" 
      .ClipPickedPortToBound "False" 
-     .Xrange "0", "4.4" 
+     .Xrange "0", "4.2" 
      .Yrange "0", "10.5" 
      .Zrange "0", "0" 
      .XrangeAdd "0.0", "0.0" 
@@ -459,6 +459,6 @@ Solver.FrequencyRange "3", "18"
      .ZrangeAdd "0.0", "0.0" 
      .SingleEnded "False" 
      .ConsiderForStructureBoundary "False" 
-     .ReferenceWCS "2.2", "5.25", "0", "0", "0", "1", "1", "0", "0"
-(TRANSFORM) "0", "0", "1", "-1", "0", "0", "0", "-1", "0"| "5.25", "-3.5527136788005e-015", "-1"(ENDTRANSFORM)
+     .ReferenceWCS "2.1", "5.25", "0", "0", "0", "1", "1", "0", "0"
+(TRANSFORM) "0", "0", "1", "-1", "0", "0", "0", "-1", "0"| "5.25", "0", "-0.9"(ENDTRANSFORM)
 [ENDWAVEGUIDE]
