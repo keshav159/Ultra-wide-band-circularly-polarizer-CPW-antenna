@@ -3,7 +3,7 @@
 '# length = mm
 '# frequency = GHz
 '# time = ns
-'# frequency range: fmin = 1 fmax = 11
+'# frequency range: fmin = 3 fmax = 14
 '# created = '[VERSION]2014.0|23.0.0|20140224[/VERSION]
 
 
@@ -2342,7 +2342,7 @@ With FarfieldPlot
      .SetPhaseCenterPlane "both" 
      .ShowPhaseCenter "True" 
      .StoreSettings
-End With 
+End With
 
 '@ set pba mesh type
 
@@ -2411,14 +2411,12 @@ With FarfieldPlot
      .SetPhaseCenterPlane "both" 
      .ShowPhaseCenter "True" 
      .StoreSettings
-End With 
-
+End With
 
 '@ define frequency range
 
 '[VERSION]2014.0|23.0.0|20140224[/VERSION]
-Solver.FrequencyRange "1", "11" 
-
+Solver.FrequencyRange "1", "11"
 
 '@ add parsweep parameter: Sequence 1:Lx
 
@@ -2426,7 +2424,6 @@ Solver.FrequencyRange "1", "11"
 With ParameterSweep
      .AddParameter_Samples "Sequence 1", "Lx", "12.5", "17", "5", "False" 
 End With
-
 
 '@ set pba mesh type
 
@@ -2440,14 +2437,12 @@ With ParameterSweep
      .DeleteSequence "Sequence 1" 
 End With
 
-
 '@ add parsweep sequence: Sequence 1
 
 '[VERSION]2014.0|23.0.0|20140224[/VERSION]
 With ParameterSweep
      .AddSequence "Sequence 1" 
 End With
-
 
 '@ add parsweep parameter: Sequence 1:L1
 
@@ -2456,7 +2451,6 @@ With ParameterSweep
      .AddParameter_Samples "Sequence 1", "L1", "10", "12.9", "4", "False" 
 End With
 
-
 '@ add parsweep parameter: Sequence 1:W1
 
 '[VERSION]2014.0|23.0.0|20140224[/VERSION]
@@ -2464,14 +2458,12 @@ With ParameterSweep
      .AddParameter_Samples "Sequence 1", "W1", "10", "13.3", "4", "False" 
 End With
 
-
 '@ delete parsweep sequence: Sequence 1
 
 '[VERSION]2014.0|23.0.0|20140224[/VERSION]
 With ParameterSweep
      .DeleteSequence "Sequence 1" 
 End With
-
 
 '@ add parsweep sequence: Sequence 1
 
@@ -2480,14 +2472,12 @@ With ParameterSweep
      .AddSequence "Sequence 1" 
 End With
 
-
 '@ add parsweep parameter: Sequence 1:C
 
 '[VERSION]2014.0|23.0.0|20140224[/VERSION]
 With ParameterSweep
      .AddParameter_Samples "Sequence 1", "C", "1.5", "4", "5", "False" 
 End With
-
 
 '@ add parsweep parameter: Sequence 1:d
 
@@ -2496,6 +2486,26 @@ With ParameterSweep
      .AddParameter_Samples "Sequence 1", "d", "1", "4", "5", "False" 
 End With
 
+'@ delete parsweep sequence: Sequence 1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .DeleteSequence "Sequence 1" 
+End With
+
+'@ add parsweep sequence: Sequence 1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddSequence "Sequence 1" 
+End With
+
+'@ add parsweep parameter: Sequence 1:Gr
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddParameter_Samples "Sequence 1", "Gr", "5", "12", "7", "False" 
+End With
 
 '@ delete parsweep sequence: Sequence 1
 
@@ -2503,5 +2513,898 @@ End With
 With ParameterSweep
      .DeleteSequence "Sequence 1" 
 End With
+
+'@ add parsweep sequence: Sequence 1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddSequence "Sequence 1" 
+End With
+
+'@ add parsweep parameter: Sequence 1:L
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddParameter_Samples "Sequence 1", "L", "11", "15", "5", "False" 
+End With
+
+'@ add parsweep parameter: Sequence 1:W
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddParameter_Samples "Sequence 1", "W", "11", "15", "5", "False" 
+End With
+
+'@ define farfield monitor: farfield (f=6)
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With Monitor 
+     .Reset 
+     .Name "farfield (f=6)" 
+     .Domain "Frequency" 
+     .FieldType "Farfield" 
+     .Frequency "6" 
+     .UseSubvolume "False" 
+     .ExportFarfieldSource "False" 
+     .SetSubvolume  "-29.491352416667",  "29.491352416667",  "-27.491352416667",  "27.491352416667",  "-11.691352416667",  "17.491352416667" 
+     .Create 
+End With
+
+'@ set pba mesh type
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+Mesh.MeshType "PBA"
+
+'@ farfield plot options
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With FarfieldPlot 
+     .Plottype "Cartesian" 
+     .Vary "angle1" 
+     .Theta "0" 
+     .Phi "0" 
+     .Step "5" 
+     .Step2 "5" 
+     .SetLockSteps "True" 
+     .SetPlotRangeOnly "False" 
+     .SetThetaStart "0" 
+     .SetThetaEnd "180" 
+     .SetPhiStart "0" 
+     .SetPhiEnd "360" 
+     .SetTheta360 "True" 
+     .SymmetricRange "True" 
+     .SetTimeDomainFF "False" 
+     .SetFrequency "11" 
+     .SetTime "0" 
+     .SetColorByValue "True" 
+     .DrawStepLines "False" 
+     .DrawIsoLongitudeLatitudeLines "False" 
+     .ShowStructure "False" 
+     .SetStructureTransparent "False" 
+     .SetFarfieldTransparent "False" 
+     .SetSpecials "enablepolarextralines" 
+     .SetPlotMode "Gain" 
+     .Distance "1" 
+     .UseFarfieldApproximation "True" 
+     .SetScaleLinear "False" 
+     .SetLogRange "40" 
+     .SetLogNorm "0" 
+     .DBUnit "0" 
+     .EnableFixPlotMaximum "False" 
+     .SetFixPlotMaximumValue "1" 
+     .SetInverseAxialRatio "False" 
+     .SetAxesType "user" 
+     .SetAnntenaType "unknown" 
+     .Phistart "1.000000e+000", "0.000000e+000", "0.000000e+000" 
+     .Thetastart "0.000000e+000", "0.000000e+000", "1.000000e+000" 
+     .PolarizationVector "0.000000e+000", "1.000000e+000", "0.000000e+000" 
+     .SetCoordinateSystemType "spherical" 
+     .SetAutomaticCoordinateSystem "True" 
+     .SetPolarizationType "Linear" 
+     .SlantAngle 0.000000e+000 
+     .Origin "bbox" 
+     .Userorigin "0.000000e+000", "0.000000e+000", "0.000000e+000" 
+     .SetUserDecouplingPlane "False" 
+     .UseDecouplingPlane "False" 
+     .DecouplingPlaneAxis "X" 
+     .DecouplingPlanePosition "0.000000e+000" 
+     .LossyGround "False" 
+     .GroundEpsilon "1" 
+     .GroundKappa "0" 
+     .EnablePhaseCenterCalculation "False" 
+     .SetPhaseCenterAngularLimit "3.000000e+001" 
+     .SetPhaseCenterComponent "boresight" 
+     .SetPhaseCenterPlane "both" 
+     .ShowPhaseCenter "True" 
+     .StoreSettings
+End With
+
+'@ delete parsweep sequence: Sequence 1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .DeleteSequence "Sequence 1" 
+End With
+
+'@ add parsweep sequence: Sequence 1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddSequence "Sequence 1" 
+End With
+
+'@ add parsweep parameter: Sequence 1:G1l
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddParameter_Samples "Sequence 1", "G1l", "1", "8", "8", "False" 
+End With
+
+'@ delete parsweep sequence: Sequence 1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .DeleteSequence "Sequence 1" 
+End With
+
+'@ add parsweep sequence: Sequence 1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddSequence "Sequence 1" 
+End With
+
+'@ add parsweep parameter: Sequence 1:Wx
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddParameter_Samples "Sequence 1", "Wx", "12", "16", "8", "False" 
+End With
+
+'@ delete monitor: e-field (f=10.5)
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+Monitor.Delete "e-field (f=10.5)"
+
+'@ delete monitor: e-field (f=8.5)
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+Monitor.Delete "e-field (f=8.5)"
+
+'@ delete monitor: farfield (f=10.5)
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+Monitor.Delete "farfield (f=10.5)"
+
+'@ delete monitor: farfield (f=6)
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+Monitor.Delete "farfield (f=6)"
+
+'@ delete monitor: farfield (broadband)
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+Monitor.Delete "farfield (broadband)"
+
+'@ farfield plot options
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With FarfieldPlot 
+     .Plottype "Cartesian" 
+     .Vary "angle1" 
+     .Theta "0" 
+     .Phi "0" 
+     .Step "5" 
+     .Step2 "5" 
+     .SetLockSteps "True" 
+     .SetPlotRangeOnly "False" 
+     .SetThetaStart "0" 
+     .SetThetaEnd "180" 
+     .SetPhiStart "0" 
+     .SetPhiEnd "360" 
+     .SetTheta360 "True" 
+     .SymmetricRange "True" 
+     .SetTimeDomainFF "False" 
+     .SetFrequency "11" 
+     .SetTime "0" 
+     .SetColorByValue "True" 
+     .DrawStepLines "False" 
+     .DrawIsoLongitudeLatitudeLines "False" 
+     .ShowStructure "False" 
+     .SetStructureTransparent "False" 
+     .SetFarfieldTransparent "False" 
+     .SetSpecials "enablepolarextralines" 
+     .SetPlotMode "Gain" 
+     .Distance "1" 
+     .UseFarfieldApproximation "True" 
+     .SetScaleLinear "False" 
+     .SetLogRange "40" 
+     .SetLogNorm "0" 
+     .DBUnit "0" 
+     .EnableFixPlotMaximum "False" 
+     .SetFixPlotMaximumValue "1" 
+     .SetInverseAxialRatio "False" 
+     .SetAxesType "user" 
+     .SetAnntenaType "unknown" 
+     .Phistart "1.000000e+000", "0.000000e+000", "0.000000e+000" 
+     .Thetastart "0.000000e+000", "0.000000e+000", "1.000000e+000" 
+     .PolarizationVector "0.000000e+000", "1.000000e+000", "0.000000e+000" 
+     .SetCoordinateSystemType "spherical" 
+     .SetAutomaticCoordinateSystem "True" 
+     .SetPolarizationType "Linear" 
+     .SlantAngle 0.000000e+000 
+     .Origin "bbox" 
+     .Userorigin "0.000000e+000", "0.000000e+000", "0.000000e+000" 
+     .SetUserDecouplingPlane "False" 
+     .UseDecouplingPlane "False" 
+     .DecouplingPlaneAxis "X" 
+     .DecouplingPlanePosition "0.000000e+000" 
+     .LossyGround "False" 
+     .GroundEpsilon "1" 
+     .GroundKappa "0" 
+     .EnablePhaseCenterCalculation "False" 
+     .SetPhaseCenterAngularLimit "3.000000e+001" 
+     .SetPhaseCenterComponent "boresight" 
+     .SetPhaseCenterPlane "both" 
+     .ShowPhaseCenter "True" 
+     .StoreSettings
+End With
+
+'@ define farfield monitor: farfield (f=6)
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With Monitor 
+     .Reset 
+     .Name "farfield (f=6)" 
+     .Domain "Frequency" 
+     .FieldType "Farfield" 
+     .Frequency "6" 
+     .UseSubvolume "False" 
+     .ExportFarfieldSource "False" 
+     .SetSubvolume  "-29.491352416667",  "29.491352416667",  "-26.205638130951",  "30.777066702383",  "1.9086475833333",  "31.091352416667" 
+     .Create 
+End With
+
+'@ define frequency range
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+Solver.FrequencyRange "3", "14"
+
+'@ edit parsweep parameter: Sequence 1:Wx
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .DeleteParameter "Sequence 1", "Wx" 
+     .AddParameter_Samples "Sequence 1", "Wx", "12.4", "13.5", "10", "False" 
+End With
+
+'@ set pba mesh type
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+Mesh.MeshType "PBA"
+
+'@ farfield plot options
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With FarfieldPlot 
+     .Plottype "Cartesian" 
+     .Vary "angle1" 
+     .Theta "0" 
+     .Phi "0" 
+     .Step "5" 
+     .Step2 "5" 
+     .SetLockSteps "True" 
+     .SetPlotRangeOnly "False" 
+     .SetThetaStart "0" 
+     .SetThetaEnd "180" 
+     .SetPhiStart "0" 
+     .SetPhiEnd "360" 
+     .SetTheta360 "True" 
+     .SymmetricRange "True" 
+     .SetTimeDomainFF "False" 
+     .SetFrequency "11" 
+     .SetTime "0" 
+     .SetColorByValue "True" 
+     .DrawStepLines "False" 
+     .DrawIsoLongitudeLatitudeLines "False" 
+     .ShowStructure "False" 
+     .SetStructureTransparent "False" 
+     .SetFarfieldTransparent "False" 
+     .SetSpecials "enablepolarextralines" 
+     .SetPlotMode "Gain" 
+     .Distance "1" 
+     .UseFarfieldApproximation "True" 
+     .SetScaleLinear "False" 
+     .SetLogRange "40" 
+     .SetLogNorm "0" 
+     .DBUnit "0" 
+     .EnableFixPlotMaximum "False" 
+     .SetFixPlotMaximumValue "1" 
+     .SetInverseAxialRatio "False" 
+     .SetAxesType "user" 
+     .SetAnntenaType "unknown" 
+     .Phistart "1.000000e+000", "0.000000e+000", "0.000000e+000" 
+     .Thetastart "0.000000e+000", "0.000000e+000", "1.000000e+000" 
+     .PolarizationVector "0.000000e+000", "1.000000e+000", "0.000000e+000" 
+     .SetCoordinateSystemType "spherical" 
+     .SetAutomaticCoordinateSystem "True" 
+     .SetPolarizationType "Linear" 
+     .SlantAngle 0.000000e+000 
+     .Origin "bbox" 
+     .Userorigin "0.000000e+000", "0.000000e+000", "0.000000e+000" 
+     .SetUserDecouplingPlane "False" 
+     .UseDecouplingPlane "False" 
+     .DecouplingPlaneAxis "X" 
+     .DecouplingPlanePosition "0.000000e+000" 
+     .LossyGround "False" 
+     .GroundEpsilon "1" 
+     .GroundKappa "0" 
+     .EnablePhaseCenterCalculation "False" 
+     .SetPhaseCenterAngularLimit "3.000000e+001" 
+     .SetPhaseCenterComponent "boresight" 
+     .SetPhaseCenterPlane "both" 
+     .ShowPhaseCenter "True" 
+     .StoreSettings
+End With
+
+'@ set pba mesh type
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+Mesh.MeshType "PBA"
+
+'@ farfield plot options
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With FarfieldPlot 
+     .Plottype "Cartesian" 
+     .Vary "angle1" 
+     .Theta "0" 
+     .Phi "0" 
+     .Step "5" 
+     .Step2 "5" 
+     .SetLockSteps "True" 
+     .SetPlotRangeOnly "False" 
+     .SetThetaStart "0" 
+     .SetThetaEnd "180" 
+     .SetPhiStart "0" 
+     .SetPhiEnd "360" 
+     .SetTheta360 "True" 
+     .SymmetricRange "True" 
+     .SetTimeDomainFF "False" 
+     .SetFrequency "11" 
+     .SetTime "0" 
+     .SetColorByValue "True" 
+     .DrawStepLines "False" 
+     .DrawIsoLongitudeLatitudeLines "False" 
+     .ShowStructure "False" 
+     .SetStructureTransparent "False" 
+     .SetFarfieldTransparent "False" 
+     .SetSpecials "enablepolarextralines" 
+     .SetPlotMode "Gain" 
+     .Distance "1" 
+     .UseFarfieldApproximation "True" 
+     .SetScaleLinear "False" 
+     .SetLogRange "40" 
+     .SetLogNorm "0" 
+     .DBUnit "0" 
+     .EnableFixPlotMaximum "False" 
+     .SetFixPlotMaximumValue "1" 
+     .SetInverseAxialRatio "False" 
+     .SetAxesType "user" 
+     .SetAnntenaType "unknown" 
+     .Phistart "1.000000e+000", "0.000000e+000", "0.000000e+000" 
+     .Thetastart "0.000000e+000", "0.000000e+000", "1.000000e+000" 
+     .PolarizationVector "0.000000e+000", "1.000000e+000", "0.000000e+000" 
+     .SetCoordinateSystemType "spherical" 
+     .SetAutomaticCoordinateSystem "True" 
+     .SetPolarizationType "Linear" 
+     .SlantAngle 0.000000e+000 
+     .Origin "bbox" 
+     .Userorigin "0.000000e+000", "0.000000e+000", "0.000000e+000" 
+     .SetUserDecouplingPlane "False" 
+     .UseDecouplingPlane "False" 
+     .DecouplingPlaneAxis "X" 
+     .DecouplingPlanePosition "0.000000e+000" 
+     .LossyGround "False" 
+     .GroundEpsilon "1" 
+     .GroundKappa "0" 
+     .EnablePhaseCenterCalculation "False" 
+     .SetPhaseCenterAngularLimit "3.000000e+001" 
+     .SetPhaseCenterComponent "boresight" 
+     .SetPhaseCenterPlane "both" 
+     .ShowPhaseCenter "True" 
+     .StoreSettings
+End With
+
+'@ set pba mesh type
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+Mesh.MeshType "PBA"
+
+'@ delete parsweep sequence: Sequence 1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .DeleteSequence "Sequence 1" 
+End With
+
+'@ add parsweep sequence: Sequence 1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddSequence "Sequence 1" 
+End With
+
+'@ add parsweep sequence: Sequence 2
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddSequence "Sequence 2" 
+End With
+
+'@ delete parsweep sequence: Sequence 2
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .DeleteSequence "Sequence 2" 
+End With
+
+'@ delete parsweep sequence: Sequence 1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .DeleteSequence "Sequence 1" 
+End With
+
+'@ add parsweep sequence: Sequence 1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddSequence "Sequence 1" 
+End With
+
+'@ add parsweep parameter: Sequence 1:Ly
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddParameter_Samples "Sequence 1", "Ly", "5", "25", "20", "False" 
+End With
+
+'@ edit parsweep parameter: Sequence 1:Ly
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .DeleteParameter "Sequence 1", "Ly" 
+     .AddParameter_Samples "Sequence 1", "Ly", "23", "30", "15", "False" 
+End With
+
+'@ delete parsweep sequence: Sequence 1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .DeleteSequence "Sequence 1" 
+End With
+
+'@ add parsweep sequence: Sequence 1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddSequence "Sequence 1" 
+End With
+
+'@ add parsweep parameter: Sequence 1:L1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddParameter_Samples "Sequence 1", "L1", "1", "14.5", "15", "False" 
+End With
+
+'@ edit parsweep parameter: Sequence 1:L1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .DeleteParameter "Sequence 1", "L1" 
+     .AddParameter_Samples "Sequence 1", "L1", "7", "14.5", "5", "False" 
+End With
+
+'@ add parsweep sequence: Sequence 2
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddSequence "Sequence 2" 
+End With
+
+'@ add parsweep parameter: Sequence 1:W1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddParameter_Samples "Sequence 1", "W1", "1", "12.5", "5", "False" 
+End With
+
+'@ delete parsweep sequence: Sequence 2
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .DeleteSequence "Sequence 2" 
+End With
+
+'@ delete parsweep sequence: Sequence 1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .DeleteSequence "Sequence 1" 
+End With
+
+'@ add parsweep sequence: Sequence 1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddSequence "Sequence 1" 
+End With
+
+'@ add parsweep parameter: Sequence 1:L1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddParameter_Samples "Sequence 1", "L1", "8.875", "10.7", "10", "False" 
+End With
+
+'@ delete parsweep sequence: Sequence 1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .DeleteSequence "Sequence 1" 
+End With
+
+'@ add parsweep sequence: Sequence 1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddSequence "Sequence 1" 
+End With
+
+'@ add parsweep parameter: Sequence 1:Ll
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddParameter_Samples "Sequence 1", "Ll", "5.1", "6.2", "5", "False" 
+End With
+
+'@ edit parsweep parameter: Sequence 1:Ll
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .DeleteParameter "Sequence 1", "Ll" 
+     .AddParameter_Samples "Sequence 1", "Ll", "5.1", "6.1", "5", "False" 
+End With
+
+'@ set pba mesh type
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+Mesh.MeshType "PBA"
+
+'@ delete parsweep sequence: Sequence 1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .DeleteSequence "Sequence 1" 
+End With
+
+'@ add parsweep sequence: Sequence 1
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddSequence "Sequence 1" 
+End With
+
+'@ set pba mesh type
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+Mesh.MeshType "PBA"
+
+'@ add parsweep parameter: Sequence 1:L2
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddParameter_Samples "Sequence 1", "L2", "0", "6", "6", "False" 
+End With
+
+'@ add parsweep parameter: Sequence 1:W2
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .AddParameter_Samples "Sequence 1", "W2", "0", "12.5", "10", "False" 
+End With
+
+'@ edit parsweep parameter: Sequence 1:W2
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .DeleteParameter "Sequence 1", "W2" 
+     .AddParameter_Samples "Sequence 1", "W2", "0", "12.5", "5", "False" 
+End With
+
+'@ edit parsweep parameter: Sequence 1:L2
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .DeleteParameter "Sequence 1", "L2" 
+     .AddParameter_Samples "Sequence 1", "L2", "0", "6", "5", "False" 
+End With
+
+'@ edit parsweep parameter: Sequence 1:W2
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .DeleteParameter "Sequence 1", "W2" 
+     .AddParameter_Samples "Sequence 1", "W2", "0", "6", "5", "False" 
+End With
+
+'@ edit parsweep parameter: Sequence 1:L2
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .DeleteParameter "Sequence 1", "L2" 
+     .AddParameter_Samples "Sequence 1", "L2", "0", "12.5", "5", "False" 
+End With
+
+'@ set pba mesh type
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+Mesh.MeshType "PBA"
+
+'@ edit parsweep parameter: Sequence 1:L2
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .DeleteParameter "Sequence 1", "L2" 
+     .AddParameter_Samples "Sequence 1", "L2", "6.25", "7.4", "4", "False" 
+End With
+
+'@ edit parsweep parameter: Sequence 1:W2
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With ParameterSweep
+     .DeleteParameter "Sequence 1", "W2" 
+     .AddParameter_Samples "Sequence 1", "W2", "3", "5", "5", "False" 
+End With
+
+'@ align wcs with face
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+Pick.ForceNextPick 
+Pick.PickFaceFromId "component1:Patch", "24" 
+WCS.AlignWCSWithSelected "Face"
+
+'@ define farfield monitor: farfield (f=8.5)
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With Monitor 
+     .Reset 
+     .Name "farfield (f=8.5)" 
+     .Domain "Frequency" 
+     .FieldType "Farfield" 
+     .Frequency "8.5" 
+     .UseSubvolume "False" 
+     .ExportFarfieldSource "False" 
+     .SetSubvolume  "-25.817425235294",  "25.817425235294",  "-21.457425235294",  "21.457425235294",  "-8.0174252352941",  "13.817425235294" 
+     .Create 
+End With 
+
+
+'@ set pba mesh type
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+Mesh.MeshType "PBA"
+
+'@ farfield plot options
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With FarfieldPlot 
+     .Plottype "Cartesian" 
+     .Vary "angle1" 
+     .Theta "0" 
+     .Phi "0" 
+     .Step "5" 
+     .Step2 "5" 
+     .SetLockSteps "True" 
+     .SetPlotRangeOnly "False" 
+     .SetThetaStart "0" 
+     .SetThetaEnd "180" 
+     .SetPhiStart "0" 
+     .SetPhiEnd "360" 
+     .SetTheta360 "True" 
+     .SymmetricRange "True" 
+     .SetTimeDomainFF "False" 
+     .SetFrequency "11" 
+     .SetTime "0" 
+     .SetColorByValue "True" 
+     .DrawStepLines "False" 
+     .DrawIsoLongitudeLatitudeLines "False" 
+     .ShowStructure "False" 
+     .SetStructureTransparent "False" 
+     .SetFarfieldTransparent "False" 
+     .SetSpecials "enablepolarextralines" 
+     .SetPlotMode "Gain" 
+     .Distance "1" 
+     .UseFarfieldApproximation "True" 
+     .SetScaleLinear "False" 
+     .SetLogRange "40" 
+     .SetLogNorm "0" 
+     .DBUnit "0" 
+     .EnableFixPlotMaximum "False" 
+     .SetFixPlotMaximumValue "1" 
+     .SetInverseAxialRatio "False" 
+     .SetAxesType "user" 
+     .SetAnntenaType "unknown" 
+     .Phistart "1.000000e+000", "0.000000e+000", "0.000000e+000" 
+     .Thetastart "0.000000e+000", "0.000000e+000", "1.000000e+000" 
+     .PolarizationVector "0.000000e+000", "1.000000e+000", "0.000000e+000" 
+     .SetCoordinateSystemType "spherical" 
+     .SetAutomaticCoordinateSystem "True" 
+     .SetPolarizationType "Linear" 
+     .SlantAngle 0.000000e+000 
+     .Origin "bbox" 
+     .Userorigin "0.000000e+000", "0.000000e+000", "0.000000e+000" 
+     .SetUserDecouplingPlane "False" 
+     .UseDecouplingPlane "False" 
+     .DecouplingPlaneAxis "X" 
+     .DecouplingPlanePosition "0.000000e+000" 
+     .LossyGround "False" 
+     .GroundEpsilon "1" 
+     .GroundKappa "0" 
+     .EnablePhaseCenterCalculation "False" 
+     .SetPhaseCenterAngularLimit "3.000000e+001" 
+     .SetPhaseCenterComponent "boresight" 
+     .SetPhaseCenterPlane "both" 
+     .ShowPhaseCenter "True" 
+     .StoreSettings
+End With 
+
+
+'@ delete monitor: farfield (f=6)
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+Monitor.Delete "farfield (f=6)" 
+
+
+'@ set pba mesh type
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+Mesh.MeshType "PBA"
+
+'@ farfield plot options
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With FarfieldPlot 
+     .Plottype "Cartesian" 
+     .Vary "angle1" 
+     .Theta "0" 
+     .Phi "0" 
+     .Step "5" 
+     .Step2 "5" 
+     .SetLockSteps "True" 
+     .SetPlotRangeOnly "False" 
+     .SetThetaStart "0" 
+     .SetThetaEnd "180" 
+     .SetPhiStart "0" 
+     .SetPhiEnd "360" 
+     .SetTheta360 "True" 
+     .SymmetricRange "True" 
+     .SetTimeDomainFF "False" 
+     .SetFrequency "11" 
+     .SetTime "0" 
+     .SetColorByValue "True" 
+     .DrawStepLines "False" 
+     .DrawIsoLongitudeLatitudeLines "False" 
+     .ShowStructure "False" 
+     .SetStructureTransparent "False" 
+     .SetFarfieldTransparent "False" 
+     .SetSpecials "enablepolarextralines" 
+     .SetPlotMode "Gain" 
+     .Distance "1" 
+     .UseFarfieldApproximation "True" 
+     .SetScaleLinear "False" 
+     .SetLogRange "40" 
+     .SetLogNorm "0" 
+     .DBUnit "0" 
+     .EnableFixPlotMaximum "False" 
+     .SetFixPlotMaximumValue "1" 
+     .SetInverseAxialRatio "False" 
+     .SetAxesType "user" 
+     .SetAnntenaType "unknown" 
+     .Phistart "1.000000e+000", "0.000000e+000", "0.000000e+000" 
+     .Thetastart "0.000000e+000", "0.000000e+000", "1.000000e+000" 
+     .PolarizationVector "0.000000e+000", "1.000000e+000", "0.000000e+000" 
+     .SetCoordinateSystemType "spherical" 
+     .SetAutomaticCoordinateSystem "True" 
+     .SetPolarizationType "Linear" 
+     .SlantAngle 0.000000e+000 
+     .Origin "bbox" 
+     .Userorigin "0.000000e+000", "0.000000e+000", "0.000000e+000" 
+     .SetUserDecouplingPlane "False" 
+     .UseDecouplingPlane "False" 
+     .DecouplingPlaneAxis "X" 
+     .DecouplingPlanePosition "0.000000e+000" 
+     .LossyGround "False" 
+     .GroundEpsilon "1" 
+     .GroundKappa "0" 
+     .EnablePhaseCenterCalculation "False" 
+     .SetPhaseCenterAngularLimit "3.000000e+001" 
+     .SetPhaseCenterComponent "boresight" 
+     .SetPhaseCenterPlane "both" 
+     .ShowPhaseCenter "True" 
+     .StoreSettings
+End With 
+
+
+'@ set pba mesh type
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+Mesh.MeshType "PBA"
+
+'@ farfield plot options
+
+'[VERSION]2014.0|23.0.0|20140224[/VERSION]
+With FarfieldPlot 
+     .Plottype "Cartesian" 
+     .Vary "angle1" 
+     .Theta "0" 
+     .Phi "0" 
+     .Step "5" 
+     .Step2 "5" 
+     .SetLockSteps "True" 
+     .SetPlotRangeOnly "False" 
+     .SetThetaStart "0" 
+     .SetThetaEnd "180" 
+     .SetPhiStart "0" 
+     .SetPhiEnd "360" 
+     .SetTheta360 "True" 
+     .SymmetricRange "True" 
+     .SetTimeDomainFF "False" 
+     .SetFrequency "11" 
+     .SetTime "0" 
+     .SetColorByValue "True" 
+     .DrawStepLines "False" 
+     .DrawIsoLongitudeLatitudeLines "False" 
+     .ShowStructure "False" 
+     .SetStructureTransparent "False" 
+     .SetFarfieldTransparent "False" 
+     .SetSpecials "enablepolarextralines" 
+     .SetPlotMode "Directivity" 
+     .Distance "1" 
+     .UseFarfieldApproximation "True" 
+     .SetScaleLinear "False" 
+     .SetLogRange "40" 
+     .SetLogNorm "0" 
+     .DBUnit "0" 
+     .EnableFixPlotMaximum "False" 
+     .SetFixPlotMaximumValue "1" 
+     .SetInverseAxialRatio "False" 
+     .SetAxesType "user" 
+     .SetAnntenaType "unknown" 
+     .Phistart "1.000000e+000", "0.000000e+000", "0.000000e+000" 
+     .Thetastart "0.000000e+000", "0.000000e+000", "1.000000e+000" 
+     .PolarizationVector "0.000000e+000", "1.000000e+000", "0.000000e+000" 
+     .SetCoordinateSystemType "spherical" 
+     .SetAutomaticCoordinateSystem "True" 
+     .SetPolarizationType "Linear" 
+     .SlantAngle 0.000000e+000 
+     .Origin "bbox" 
+     .Userorigin "0.000000e+000", "0.000000e+000", "0.000000e+000" 
+     .SetUserDecouplingPlane "False" 
+     .UseDecouplingPlane "False" 
+     .DecouplingPlaneAxis "X" 
+     .DecouplingPlanePosition "0.000000e+000" 
+     .LossyGround "False" 
+     .GroundEpsilon "1" 
+     .GroundKappa "0" 
+     .EnablePhaseCenterCalculation "False" 
+     .SetPhaseCenterAngularLimit "3.000000e+001" 
+     .SetPhaseCenterComponent "boresight" 
+     .SetPhaseCenterPlane "both" 
+     .ShowPhaseCenter "True" 
+     .StoreSettings
+End With 
 
 

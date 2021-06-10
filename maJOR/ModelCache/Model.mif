@@ -3,7 +3,7 @@
 [PCB_BODIES: False]
 [PCB_IMPORT: False]
 [DISABLE_FAST_LOAD: False]
-[WCS: 0 15 1.7 0 0 1 -1 -0 -0]
+[WCS: 0.36670229740825 0.42035793403665 1.7 0 0 1 -1 -1.1842378929335e-015 0]
 [UNITS]
      .Geometry "mm" 
      .Frequency "GHz" 
@@ -17,7 +17,7 @@
      .Inductance "NanoH" 
 [ENDUNITS]
 [FREQUENCYRANGE]
-Solver.FrequencyRange "1", "11" 
+Solver.FrequencyRange "3", "14" 
 [ENDFREQUENCYRANGE]
 [BACKGROUND]
      .XminSpace "0.0" 
@@ -460,5 +460,5 @@ Solver.FrequencyRange "1", "11"
      .SingleEnded "False" 
      .ConsiderForStructureBoundary "False" 
      .ReferenceWCS "2.1", "5.25", "0", "0", "0", "1", "1", "0", "0"
-(TRANSFORM) "0", "0", "1", "-1", "0", "0", "0", "-1", "0"| "5.25", "0", "-0.9"(ENDTRANSFORM)
+(TRANSFORM) "0", "0", "1", "-1", "1.1657341758564e-015", "0", "-1.1657341758564e-015", "-1", "0"| "5.6167022974082", "-12.219642065963", "-0.9"(ENDTRANSFORM)
 [ENDWAVEGUIDE]

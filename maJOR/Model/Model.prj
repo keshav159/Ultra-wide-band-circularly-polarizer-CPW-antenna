@@ -1,7 +1,7 @@
 [Author]
 kesha
 [Mesh Cells]
-
+127,764
 [Mesh Type]
 Hexahedral
 [Last Problem Type]
@@ -11,7 +11,7 @@ HF Time Domain
 [Last Solver Type Abb]
 t
 [Results]
-Unknown
+Time Domain: S-Parameter
 [Modeler Unique ID]
-5:major.cst?97407f16552206a1eec755e1eafb2ae8?54836:numberofparameters=20:port=2>mode=1>zre=0>zim=0:::c?g1l?g1w?gr?l?l1?l2?ll?lw?lx?ly?w?w1?w2?wx?d?gp?h?t?x1
+5:major.cst?7e85e1f9f74642f408eb6fa20d31070f?76811:numberofparameters=20:port=2>mode=1>zre=50>zim=0:::c?g1l?g1w?gr?l?l1?l2?ll?lw?lx?ly?w?w1?w2?wx?d?gp?h?t?x1
 [Comment]

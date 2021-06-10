@@ -8,8 +8,8 @@ StaticSources:
 FloquetPortNames:
 FloquetPortModes:
 Number of frequency-points: 1
-Fmin: 1.000000e+009
-Fmax: 1.100000e+010
+Fmin: 3.000000e+009
+Fmax: 1.400000e+010
 Fscale: 1.000000e+009
 
 
@@ -30,43 +30,10 @@ PortModeConsState: 0
 
 
 *** newmonitor
-monname: "farfield (broadband)"
-nmonfrequencies: 0
-monfrequencies: 
-montype: 18
-mondomain: 1
-mon_fmin: "1"
-mon_fmax: "11"
-mon_nfSteps: "210"
-*** endmonitor
-
-*** newmonitor
-monname: "farfield (f=10.5)"
-nmonfrequencies: 1
-monfrequencies: "10.5" 
-montype: 18
-mondomain: 1
-mon_fmin: ""
-mon_fmax: ""
-mon_nfSteps: ""
-*** endmonitor
-
-*** newmonitor
-monname: "e-field (f=10.5)"
-nmonfrequencies: 1
-monfrequencies: "10.5" 
-montype: 0
-mondomain: 1
-mon_fmin: ""
-mon_fmax: ""
-mon_nfSteps: ""
-*** endmonitor
-
-*** newmonitor
-monname: "e-field (f=8.5)"
+monname: "farfield (f=8.5)"
 nmonfrequencies: 1
 monfrequencies: "8.5" 
-montype: 0
+montype: 18
 mondomain: 1
 mon_fmin: ""
 mon_fmax: ""
